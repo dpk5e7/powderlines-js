@@ -1,4 +1,3 @@
-const { json } = require("express");
 const path = require("path");
 const fetch = require("cross-fetch");
 
@@ -67,7 +66,7 @@ module.exports = {
 };
 
 async function getSnowData(id, days = 5, start_date = false, end_date = false) {
-  //triplet = "672:WA:SNTL";
+  //triplet = "936:CO:SNTL";
 
   let date = "";
 

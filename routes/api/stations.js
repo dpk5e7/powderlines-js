@@ -2,9 +2,6 @@ const router = require("express").Router();
 const { getAllStations } = require("../../utils/snotel");
 
 // The `/api/stations` endpoint
-
-// No parameters
-
 router.get("/", async (req, res) => {
   try {
     const data = await getAllStations();
