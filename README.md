@@ -163,9 +163,9 @@ Request parameters:
 | ---- | ---- |
 | lat (float) | Latitude to base search off of. (required) |
 | lng (float) | Longitude to base search off of. (required) |
-data (boolean) | Setting to true will enable fetching of snow info from the stations. Note that this might be slow depending on the number of stations you're requesting information from. |
-| days (integer) | Number of days information to retrieve from today. (optional) |
 | count (integer) | number of station's to return (optional - defaults to 3, maximum of 5) |
+data (boolean) | Setting to true will enable fetching of snow info from the stations. Note that this might be slow depending on the number of stations you're requesting information from. |
+| days (integer) | Number of days information to retrieve from today. (optional - defaults to 5) |
 
 Response parameters:
 The response is an array of stations including their basic information in addition to an array of snow data.

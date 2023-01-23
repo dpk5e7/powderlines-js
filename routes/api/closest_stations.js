@@ -9,8 +9,8 @@ router.get("/", async (req, res) => {
     const days = req.query.days ? parseInt(req.query.days) : 5;
     const count = req.query.count ? parseInt(req.query.count) : 3;
     
-    if (count > 10)
-      count = 10;
+    if (count > 5)
+      count = 5;
     
     const data = req.query.data == "true" ? true : false;
 
