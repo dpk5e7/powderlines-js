@@ -178,7 +178,7 @@ The response is an array of stations including their basic information in additi
 
 Sample calls: 
 - [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3)
-- [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&days=2&count=4](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&days=2&count=4)
+- [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&count=4](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&count=4)
 
 Sample response:
 
