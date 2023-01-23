@@ -81,25 +81,31 @@
           <p><strong>Sample response:</strong>
           <pre>
 [
-    {
-        &quot;elevation&quot;:8777,
-        &quot;location&quot;: {&quot;lat&quot;:40.8852,&quot;lng&quot;:-110.8277},
-        &quot;name&quot;:&quot;BEAR RIVER RS&quot;,
-        &quot;timezone&quot;:-7,
-        &quot;triplet&quot;:&quot;992:UT:SNTL&quot;,
-        &quot;wind&quot;:false
+  {
+    &quot;elevation&quot;: 11300,
+    &quot;location&quot;: {
+      &quot;lat&quot;: 39.80392,
+      &quot;lng&quot;: -105.77789
     },
-    {
-        &quot;elevation&quot;:5130,
-        &quot;location&quot;:{&quot;lat&quot;:46.78265,&quot;lng&quot;:-121.74765},
-        &quot;name&quot;:&quot;PARADISE&quot;,
-        &quot;timezone&quot;:-8,
-        &quot;triplet&quot;:&quot;679:WA:SNTL&quot;,
-        &quot;wind&quot;:false
+    &quot;name&quot;: &quot;BERTHOUD SUMMIT&quot;,
+    &quot;timezone&quot;: -7,
+    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
+    &quot;wind&quot;: false
+  },
+  {
+    &quot;elevation&quot;: 11400,
+    &quot;location&quot;: {
+      &quot;lat&quot;: 39.67433,
+      &quot;lng&quot;: -105.90133
     },
-    {
-        ...
-    }
+    &quot;name&quot;: &quot;LOVELAND BASIN&quot;,
+    &quot;timezone&quot;: -7,
+    &quot;triplet&quot;: &quot;602:CO:SNTL&quot;,
+    &quot;wind&quot;: false
+  },
+  {
+  ...
+  }
 ]
 </pre>
           </p>
@@ -173,44 +179,46 @@
 
           <p><strong>Sample calls:</strong>
             <a
-              href="https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20">https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20</a>
+              href="https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10">https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10</a>
             <a
-              href="https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?start_date=2013-01-15&end_date=2013-01-15">https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?start<em>date=2013-01-15&amp;end</em>date=2013-01-15</a>
+              href="https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11">https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start<em>date=2023-01-09&amp;end</em>date=2023-01-11</a>
           </p>
 
           <p><strong>Sample response:</strong>
           <pre>
 {
-    &quot;station_information&quot;:
-        {
-            &quot;elevation&quot;:3950,
-            &quot;location&quot;: {&quot;lat&quot;:47.74607,&quot;lng&quot;:-121.09288},
-            &quot;name&quot;:&quot;STEVENS PASS&quot;,
-            &quot;timezone&quot;:-8,
-            &quot;triplet&quot;:&quot;791:WA:SNTL&quot;,
-            &quot;wind&quot;:false
-        },
-    &quot;data&quot;: [
-        {
-            &quot;Date&quot;:&quot;2014-06-30&quot;,
-            &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-            &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-            &quot;Snow Depth (in)&quot;:&quot;0&quot;,
-            &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
-            &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
-        },
-        {
-            &quot;Date&quot;:&quot;2014-07-01&quot;,
-            &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-            &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-            &quot;Snow Depth (in)&quot;:&quot;0&quot;,
-            &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
-            &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
-        },
-        {
-            ...
-        }
-    ]<br>
+  &quot;station_information&quot;: {
+    &quot;elevation&quot;: 11300,
+    &quot;location&quot;: {
+      &quot;lat&quot;: 39.80392,
+      &quot;lng&quot;: -105.77789
+      },
+    &quot;name&quot;: &quot;BERTHOUD SUMMIT&quot;,
+    &quot;timezone&quot;: -7,
+    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
+    &quot;wind&quot;: false
+  },
+  &quot;data&quot;: [
+    {
+      &quot;Date&quot;: &quot;2023-01-12&quot;,
+      &quot;Snow Water Equivalent (in)&quot;: &quot;9.8&quot;,
+      &quot;Change In Snow Water Equivalent (in)&quot;: &quot;0.3&quot;,
+      &quot;Snow Depth (in)&quot;: &quot;43&quot;,
+      &quot;Change In Snow Depth (in)&quot;: &quot;3&quot;,
+      &quot;Observed Air Temperature (degrees farenheit)&quot;: &quot;10&quot;
+    },
+    {
+      &quot;Date&quot;: &quot;2023-01-13&quot;,
+      &quot;Snow Water Equivalent (in)&quot;: &quot;9.8&quot;,
+      &quot;Change In Snow Water Equivalent (in)&quot;: &quot;0.0&quot;,
+      &quot;Snow Depth (in)&quot;: &quot;42&quot;,
+      &quot;Change In Snow Depth (in)&quot;: &quot;-1&quot;,
+      &quot;Observed Air Temperature (degrees farenheit)&quot;: &quot;11&quot;
+    },
+    {
+      ...
+    }
+  ]
 }
 </pre>
           </p>
@@ -287,47 +295,49 @@
           </p>
 
           <p><strong>Sample call:</strong> <a
-              href="https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&lng=-121.3958&data=true&days=3&count=3">https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&amp;lng=-121.3958&amp;data=true&amp;days=3&amp;count=3</a>
+              href="https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3">https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&amp;lng=-104.9903&amp;data=true&amp;days=3&amp;count=3</a>
           </p>
 
           <p><strong>Sample response:</strong>
           <pre>
 [
-    {
-        &quot;station_information&quot;:
-            {
-                &quot;elevation&quot;:3950,
-                &quot;location&quot;: {&quot;lat&quot;:47.74607,&quot;lng&quot;:-121.09288},
-                &quot;name&quot;:&quot;STEVENS PASS&quot;,
-                &quot;timezone&quot;:-8,
-                &quot;triplet&quot;:&quot;791:WA:SNTL&quot;,
-                &quot;wind&quot;:false
-            },
-        &quot;data&quot;: [
-            {
-                &quot;Date&quot;:&quot;2014-06-30&quot;,
-                &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-                &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-                &quot;Snow Depth (in)&quot;:&quot;0&quot;,
-                &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
-                &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
-            },
-            {
-                &quot;Date&quot;:&quot;2014-07-01&quot;,
-                &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-                &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
-                &quot;Snow Depth (in)&quot;:&quot;0&quot;,
-                &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
-                &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
-            },
-            {
-                ...
-            }
-        ]<br>
+  {
+    &quot;station_information&quot;: {
+      &quot;elevation&quot;: 10600,
+        &quot;location&quot;: {
+        &quot;lat&quot;: 39.65627,
+        &quot;lng&quot;: -105.59345
+        },
+      &quot;name&quot;: &quot;ECHO LAKE&quot;,
+      &quot;timezone&quot;: -7,
+      &quot;triplet&quot;: &quot;936:CO:SNTL&quot;,
+      &quot;wind&quot;: false
     },
-    {
+    &quot;data&quot;: [
+      {
+        &quot;Date&quot;: &quot;2023-01-19&quot;,
+        &quot;Snow Water Equivalent (in)&quot;: &quot;3.2&quot;,
+        &quot;Change In Snow Water Equivalent (in)&quot;: &quot;0.1&quot;,
+        &quot;Snow Depth (in)&quot;: &quot;20&quot;,
+        &quot;Change In Snow Depth (in)&quot;: &quot;0&quot;,
+        &quot;Observed Air Temperature (degrees farenheit)&quot;: &quot;8&quot;
+      },
+      {
+        &quot;Date&quot;: &quot;2023-01-20&quot;,
+        &quot;Snow Water Equivalent (in)&quot;: &quot;3.3&quot;,
+        &quot;Change In Snow Water Equivalent (in)&quot;: &quot;0.1&quot;,
+        &quot;Snow Depth (in)&quot;: &quot;19&quot;,
+        &quot;Change In Snow Depth (in)&quot;: &quot;-1&quot;,
+        &quot;Observed Air Temperature (degrees farenheit)&quot;: &quot;12&quot;
+      },
+      {
         ...
-    }
+      }
+    ]
+  },
+  {
+    ...
+  }
 ]
 </pre>
           </p>
@@ -363,7 +373,7 @@
       <div class="medium-8 medium-push-2 columns">
         <p>Originally Crafted in Seattle by <a href="http://bobbyandmaura.com" target="_blank">Bobby &amp; Maura</a>
           <br />
-          Ported to Node.js in 2023 by <a href="https://www.kellysoftware.org" target="_blank">Dan</a>
+          Ported to Node.js in 2023 by <a href="https://www.kellysoftware.org" target="_blank">Dan Kelly</a>
         </p>
         <small>Backcountry travel is inherently dangerous. This site makes no suggestions or promises in terms of the
           safety of the tours listed. Remember to always travel with the 10 essentials, including avalanche gear &mdash;

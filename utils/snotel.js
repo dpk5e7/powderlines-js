@@ -1,5 +1,6 @@
 const { json } = require("express");
 const path = require("path");
+const fetch = require("cross-fetch");
 
 module.exports = {
   getAllStations: async () => {
