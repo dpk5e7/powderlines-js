@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowderLines.js</title>
+  <link rel="stylesheet" href="/css/application.css">
+</head>
+
+<body>
+  <a href="/" class="logo-small">Powderlin.es</a>
+  <div class="page-header dark-image" style="background-image:url(/images/api.jpg);">
+    <h1>API</h1>
+    <a href="#content" class="scroll-arrow">Next</a>
+  </div>
+  <div class="section-small" id="content">
+    <div class="row">
+      <div class="small-12 medium-8 medium-push-2 columns">
+        <div class="post">
+          <p>Use our free API for accessing SNOTEL station data. Our API is useful for finding current snow levels in
+            mountainous regions across the United States. All endpoints accept a callback parameter for JSONP and
+            don&#39;t require authentication.</p>
+
+          <p>Over 800 SNOTEL stations are available:</p>
+
+          <h2>Get all SNOTEL stations</h2>
+
+          <p><strong>Description:</strong><br>
+            Returns basic information about all of the SNOTEL stations in the United States.</p>
+
+          <p><strong>Endpoint:</strong> /stations</p>
+
+          <p><strong>Request parameters:</strong>
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Descriptions</th>
+            </tr>
+            <tr>
+              <td>None</td>
+              <td>None</td>
+            </tr>
+          </table>
+          </p>
+
+          <p><strong>Response parameters:</strong><br>
+            The response comes as an array of objects. Here is a breakdown of a returned object.</p>
+
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Descriptions</th>
+            </tr>
+            <tr>
+              <td>Elevation (integer)</td>
+              <td>Elevation of the station in feet</td>
+            </tr>
+            <tr>
+              <td>Location (lat, lng object)</td>
+              <td>Latitude and longitude of the station</td>
+            </tr>
+            <tr>
+              <td>Name (string)</td>
+              <td>Name of the station in ALL CAPS</td>
+            </tr>
+            <tr>
+              <td>Triplet (string)</td>
+              <td>Unique identifier for the station. Formatted as <ID number>:<state code>:SNTL</td>
+            </tr>
+            <tr>
+              <td>Wind (boolean)</td>
+              <td>Indiciates whether or not the station is equiped with a wind sensor</td>
+            </tr>
+          </table>
+
+          <p><strong>Sample call:</strong> <a
+              href="https://powderlines.kellysoftware.org/api/stations">https://powderlines.kellysoftware.org/api/stations</a>
+          </p>
+
+          <p><strong>Sample response:</strong>
+          <pre>
+[
+    {
+        &quot;elevation&quot;:8777,
+        &quot;location&quot;: {&quot;lat&quot;:40.8852,&quot;lng&quot;:-110.8277},
+        &quot;name&quot;:&quot;BEAR RIVER RS&quot;,
+        &quot;timezone&quot;:-7,
+        &quot;triplet&quot;:&quot;992:UT:SNTL&quot;,
+        &quot;wind&quot;:false
+    },
+    {
+        &quot;elevation&quot;:5130,
+        &quot;location&quot;:{&quot;lat&quot;:46.78265,&quot;lng&quot;:-121.74765},
+        &quot;name&quot;:&quot;PARADISE&quot;,
+        &quot;timezone&quot;:-8,
+        &quot;triplet&quot;:&quot;679:WA:SNTL&quot;,
+        &quot;wind&quot;:false
+    },
+    {
+        ...
+    }
+]
+</pre>
+          </p>
+
+          <h2>Get snow info for a station</h2>
+
+          <p><strong>Description:</strong><br>
+            Returns detailed information for the specified SNOTEL station.</p>
+
+          <p><strong>Endpoint:</strong> /station/:id</p>
+
+          <p><strong>Request parameters:</strong>
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>ID (triplet)</td>
+              <td>Station id in the form of ###:STATE:SNTL. Example: 791:WA:SNTL. Find the triplet for a particular
+                station through the /stations endpoint.</td>
+            </tr>
+            <tr>
+              <td>Days (integer)</td>
+              <td>Number of days information to retrieve from today. (optional)</td>
+            </tr>
+            <tr>
+              <td>Start date (YYYY-MM-DD)</td>
+              <td>Historical date to pull data from. Use in conjunction with end date. (optional)</td>
+            </tr>
+            <tr>
+              <td>End date (YYYY-MM-DD)</td>
+              <td>Historical date to pull data from. Use in conjunction with start date (optional)</td>
+            </tr>
+          </table>
+          </p>
+
+          <p><strong>Response parameters:</strong><br>
+            The response includes basic station information in addition to an array of snow data.
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Date measurement was taken</td>
+            </tr>
+            <tr>
+              <td>Snow Water Equivalent (in)</td>
+              <td>The amount of water contained within the snowpack.</td>
+            </tr>
+            <tr>
+              <td>Change In Snow Water Equivalent (in)</td>
+              <td>The change in the snow water equivalent from the last measurement (typically the past 24 hours).</td>
+            </tr>
+            <tr>
+              <td>Snow Depth (in)</td>
+              <td>Depth of snow in inches.</td>
+            </tr>
+            <tr>
+              <td>Change In Snow Depth (in)</td>
+              <td>The change in the snow depth from the last measurement (typically the past 24 hours).</td>
+            </tr>
+            <tr>
+              <td>Observed Air Temperature (degrees farenheit)</td>
+              <td>The observed air temperature, in degrees farenheit.</td>
+            </tr>
+          </table>
+          </p>
+
+          <p><strong>Sample calls:</strong>
+            <a
+              href="https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20">https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20</a>
+            <a
+              href="https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?start_date=2013-01-15&end_date=2013-01-15">https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?start<em>date=2013-01-15&amp;end</em>date=2013-01-15</a>
+          </p>
+
+          <p><strong>Sample response:</strong>
+          <pre>
+{
+    &quot;station_information&quot;:
+        {
+            &quot;elevation&quot;:3950,
+            &quot;location&quot;: {&quot;lat&quot;:47.74607,&quot;lng&quot;:-121.09288},
+            &quot;name&quot;:&quot;STEVENS PASS&quot;,
+            &quot;timezone&quot;:-8,
+            &quot;triplet&quot;:&quot;791:WA:SNTL&quot;,
+            &quot;wind&quot;:false
+        },
+    &quot;data&quot;: [
+        {
+            &quot;Date&quot;:&quot;2014-06-30&quot;,
+            &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+            &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+            &quot;Snow Depth (in)&quot;:&quot;0&quot;,
+            &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
+            &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
+        },
+        {
+            &quot;Date&quot;:&quot;2014-07-01&quot;,
+            &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+            &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+            &quot;Snow Depth (in)&quot;:&quot;0&quot;,
+            &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
+            &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
+        },
+        {
+            ...
+        }
+    ]<br>
+}
+</pre>
+          </p>
+
+          <h2>Find closest station to a latitude and longitude:</h2>
+
+          <p><strong>Description:</strong><br>
+            Returns detailed information for the closest SNOTEL stations to a geographic point.</p>
+
+          <p><strong>Endpoint:</strong> /closest_stations</p>
+
+          <p><strong>Request parameters:</strong>
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>lat (float)</td>
+              <td>Latitude to base search off of. (required)</td>
+            </tr>
+            <tr>
+              <td>lng (float)</td>
+              <td>Longitude to base search off of. (required)</td>
+            </tr>
+            <tr>
+              <td>data (boolean)</td>
+              <td>Setting to true will enable fetching of snow info from the stations. Note that this might be slow
+                depending on the number of stations you&#39;re requesting information from.</td>
+            <tr>
+            <tr>
+              <td>days (integer)</td>
+              <td>Number of days information to retrieve from today. (optional)</td>
+            </tr>
+            <tr>
+              <td>count (integer)</td>
+              <td>number of station&#39;s to return (optional - defaults to 3, maximum of 5)</td>
+            </tr>
+          </table>
+          </p>
+
+          <p><strong>Response parameters:</strong><br>
+            The response is an array of stations including their basic information in addition to an array of snow data.
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>Date measurement was taken</td>
+            </tr>
+            <tr>
+              <td>Snow Water Equivalent (in)</td>
+              <td>The amount of water contained within the snowpack.</td>
+            </tr>
+            <tr>
+              <td>Change In Snow Water Equivalent (in)</td>
+              <td>The change in the snow water equivalent from the last measurement (typically the past 24 hours).</td>
+            </tr>
+            <tr>
+              <td>Snow Depth (in)</td>
+              <td>Depth of snow in inches.</td>
+            </tr>
+            <tr>
+              <td>Change In Snow Depth (in)</td>
+              <td>The change in the snow depth from the last measurement (typically the past 24 hours).</td>
+            </tr>
+            <tr>
+              <td>Observed Air Temperature (degrees farenheit)</td>
+              <td>The observed air temperature, in degrees farenheit.</td>
+            </tr>
+          </table>
+          </p>
+
+          <p><strong>Sample call:</strong> <a
+              href="https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&lng=-121.3958&data=true&days=3&count=3">https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&amp;lng=-121.3958&amp;data=true&amp;days=3&amp;count=3</a>
+          </p>
+
+          <p><strong>Sample response:</strong>
+          <pre>
+[
+    {
+        &quot;station_information&quot;:
+            {
+                &quot;elevation&quot;:3950,
+                &quot;location&quot;: {&quot;lat&quot;:47.74607,&quot;lng&quot;:-121.09288},
+                &quot;name&quot;:&quot;STEVENS PASS&quot;,
+                &quot;timezone&quot;:-8,
+                &quot;triplet&quot;:&quot;791:WA:SNTL&quot;,
+                &quot;wind&quot;:false
+            },
+        &quot;data&quot;: [
+            {
+                &quot;Date&quot;:&quot;2014-06-30&quot;,
+                &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+                &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+                &quot;Snow Depth (in)&quot;:&quot;0&quot;,
+                &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
+                &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
+            },
+            {
+                &quot;Date&quot;:&quot;2014-07-01&quot;,
+                &quot;Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+                &quot;Change In Snow Water Equivalent (in)&quot;:&quot;0.0&quot;,
+                &quot;Snow Depth (in)&quot;:&quot;0&quot;,
+                &quot;Change In Snow Depth (in)&quot;:&quot;0&quot;,
+                &quot;Air Temperature Observed (degF)&quot;:&quot;30&quot;
+            },
+            {
+                ...
+            }
+        ]<br>
+    },
+    {
+        ...
+    }
+]
+</pre>
+          </p>
+
+          <h2>Want to help out?</h2>
+
+          <p>The source for the API is available at <a
+              href="https://github.com/dpk5e7/powderlines-js">https://github.com/dpk5e7/powderlines-js</a>.
+          </p>
+
+          <p>The source for the original Ruby On Rails API is available at <a
+              href="https://github.com/bobbymarko/powderlines-api">https://github.com/bobbymarko/powderlines-api</a>.
+          </p>
+
+          <p>To run the API locally:
+          <ol>
+            <li>Clone the git repository</li>
+            <li>With Node.js installed, run &quot;npm start&quot;</li>
+            <li>Navigate to http://localhost:3001 in your browser</li>
+          </ol>
+          </p>
+
+          <h2>Feedback</h2>
+
+          <p>Let us know if you have any questions or concern. <a href="mailto:dan@kellysoftware.org">Email Dan</a></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section footer">
+    <div class="row">
+      <div class="medium-8 medium-push-2 columns">
+        <p>Originally Crafted in Seattle by <a href="http://bobbyandmaura.com" target="_blank">Bobby &amp; Maura</a>
+          <br />
+          Ported to JavaScript in 2023 by <a href="https://www.kellysoftware.org" target="_blank">Dan</a>
+        </p>
+        <small>Backcountry travel is inherently dangerous. This site makes no suggestions or promises in terms of the
+          safety of the tours listed. Remember to always travel with the 10 essentials, including avalanche gear &mdash;
+          beacon, shovel and probe and good partners. Ski and ride safe!</small>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

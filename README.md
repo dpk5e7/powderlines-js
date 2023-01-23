@@ -1,2 +1,3 @@
 # powderlines-js
-JavaScript port of http://powderlin.es/api.html
+JavaScript port of https://github.com/bobbymarko/powderlines-api
+http://powderlin.es/api.html
