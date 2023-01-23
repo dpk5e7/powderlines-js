@@ -38,7 +38,7 @@ The response comes as an array of objects. Here is a breakdown of a returned obj
 |Parameter | Descriptions |
 |----|----|
 |Name (string) | Name of the station |
-|Triplet (string) | Unique identifier for the station. Formatted as ::SNTL |
+|Triplet (string) | Unique identifier for the station. Formatted as ###:STATE:SNTL |
 |Elevation (integer) | Elevation of the station in feet |
 |Location (lat, lng object) | Latitude and longitude of the station |
 
@@ -85,7 +85,7 @@ Endpoint: /station/:id
 Request parameters:
 | Parameter | Description |
 | ---- | ---- |
-| ID (triplet) | Station id in the form of ###:STATE:SNTL. Example: 791:WA:SNTL. Find the triplet for a particular station through the /stations endpoint. |
+| ID (triplet) | Station id in the form of ###:STATE:SNTL. Example: 335:CO:SNTL. Find the triplet for a particular station through the /stations endpoint. |
 | Days (integer) | Number of days information to retrieve from today. (optional - defaults to 5 unless using start_date and end_date) |
 | Start date (YYYY-MM-DD) | Historical date to pull data from. Use in conjunction with end date. (optional) |
 | End date (YYYY-MM-DD) | Historical date to pull data from. Use in conjunction with start date (optional) |
@@ -113,30 +113,30 @@ Sample response:
 {
   "station_information":
     {
-      "name": "Echo Lake",
-      "triplet": "936:CO:SNTL",
-      "elevation": 10600,
+      "name": "Berthoud Summit",
+      "triplet": "335:CO:SNTL",
+      "elevation": 11300,
       "location": {
-        "lat": 39.65627,
-        "lng": -105.59345
+        "lat": 39.80392,
+        "lng": -105.77789
       }
     },
   "data": [
     {
-      "Date": "2023-01-19",
-      "Snow Water Equivalent (in)": "3.2",
-      "Change In Snow Water Equivalent (in)": "0.1",
-      "Snow Depth (in)": "20",
-      "Change In Snow Depth (in)": "0",
-      "Observed Air Temperature (degrees farenheit)": "8"
+      "Date": "2023-01-21",
+      "Snow Water Equivalent (in)": "10.9",
+      "Change In Snow Water Equivalent (in)": "-0.1",
+      "Snow Depth (in)": "43",
+      "Change In Snow Depth (in)": "-1",
+      "Observed Air Temperature (degrees farenheit)": "6"
     },
     {
-      "Date": "2023-01-20",
-      "Snow Water Equivalent (in)": "3.3",
-      "Change In Snow Water Equivalent (in)": "0.1",
-      "Snow Depth (in)": "19",
-      "Change In Snow Depth (in)": "-1",
-      "Observed Air Temperature (degrees farenheit)": "12"
+      "Date": "2023-01-22",
+      "Snow Water Equivalent (in)": "11.1",
+      "Change In Snow Water Equivalent (in)": "0.2",
+      "Snow Depth (in)": "44",
+      "Change In Snow Depth (in)": "1",
+      "Observed Air Temperature (degrees farenheit)": "4"
     },
     {
       ...
@@ -183,36 +183,36 @@ Sample response:
 [
   {
     "station_information":
-      {
-        "name": "Berthoud Summit",
-        "triplet": "335:CO:SNTL",
-        "elevation": 11300,
-        "location": {
-          "lat": 39.80392,
-          "lng": -105.77789
-        }
-      },
+    {
+      "name": "Echo Lake",
+      "triplet": "936:CO:SNTL",
+      "elevation": 10600,
+      "location": {
+        "lat": 39.65627,
+        "lng": -105.59345
+      }
+    },
     "data": [
       {
-        "Date": "2023-01-21",
-        "Snow Water Equivalent (in)": "10.9",
-        "Change In Snow Water Equivalent (in)": "-0.1",
-        "Snow Depth (in)": "43",
-        "Change In Snow Depth (in)": "-1",
-        "Observed Air Temperature (degrees farenheit)": "6"
+        "Date": "2023-01-19",
+        "Snow Water Equivalent (in)": "3.2",
+        "Change In Snow Water Equivalent (in)": "0.1",
+        "Snow Depth (in)": "20",
+        "Change In Snow Depth (in)": "0",
+        "Observed Air Temperature (degrees farenheit)": "8"
       },
       {
-        "Date": "2023-01-22",
-        "Snow Water Equivalent (in)": "11.1",
-        "Change In Snow Water Equivalent (in)": "0.2",
-        "Snow Depth (in)": "44",
-        "Change In Snow Depth (in)": "1",
-        "Observed Air Temperature (degrees farenheit)": "4"
+        "Date": "2023-01-20",
+        "Snow Water Equivalent (in)": "3.3",
+        "Change In Snow Water Equivalent (in)": "0.1",
+        "Snow Depth (in)": "19",
+        "Change In Snow Depth (in)": "-1",
+        "Observed Air Temperature (degrees farenheit)": "12"
       },
       {
         ...
       }
-    ]
+    ]    
   },
   {
     ...
