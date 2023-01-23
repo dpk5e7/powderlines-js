@@ -31,7 +31,7 @@ Endpoint: /stations
 Request parameters:
 | Parameter | Descriptions |
 |----|----|
-| None | None |
+| State | The state to retreive data from. (optional) |
 
 Response parameters:
 The response comes as an array of objects. Here is a breakdown of a returned object.
@@ -43,7 +43,9 @@ The response comes as an array of objects. Here is a breakdown of a returned obj
 |Triplet (string) | Unique identifier for the station. Formatted as ::SNTL |
 |Wind (boolean) | Indiciates whether or not the station is equiped with a wind sensor |
 
-Sample call: [https://powderlines.kellysoftware.org/api/stations](https://powderlines.kellysoftware.org/api/stations)
+Sample calls: 
+- [https://powderlines.kellysoftware.org/api/stations](https://powderlines.kellysoftware.org/api/stations)
+- [https://powderlines.kellysoftware.org/api/stations?state=CO](https://powderlines.kellysoftware.org/api/stations?state=CO)
 
 Sample Response:
 
@@ -104,7 +106,6 @@ The response includes basic station information in addition to an array of snow 
 | Observed Air Temperature (degrees farenheit) | The observed air temperature, in degrees farenheit. |
 
 Sample calls:
-
 - [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10)
 - [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11)
 
@@ -175,7 +176,9 @@ The response is an array of stations including their basic information in additi
 | Change In Snow Depth (in) | The change in the snow depth from the last measurement (typically the past 24 hours). |
 | Observed Air Temperature (degrees farenheit) | The observed air temperature, in degrees farenheit. |
 
-Sample call: [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3)
+Sample calls: 
+- [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3)
+- [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&days=2&count=4](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&days=2&count=4)
 
 Sample response:
 

@@ -2,21 +2,24 @@ const path = require("path");
 const fetch = require("cross-fetch");
 
 module.exports = {
-  getAllStations: async () => {
+  getAllStations: async (state) => {
     const filePath = path.join(__dirname, "../data/snotelStations.json");
-    const stations = require(filePath);
+    let stations = require(filePath);
+
+    if (state !== "all") {
+      stations = stations.filter(
+        (station) => station.triplet.split(":")[1] === state
+      );
+    }
+
     return stations;
   },
 
   getStationInfo: async (id) => {
     const filePath = path.join(__dirname, "../data/snotelStations.json");
     const stations = require(filePath);
-    const station = stations.filter((station) => station.triplet === id);
-    if (station.length > 0) {
-      return station[0];
-    } else {
-      return null;
-    }
+    const station = stations.find((station) => station.triplet === id);
+    return station;
   },
 
   getClosestStations: async (lat, lng, count, days, data) => {

@@ -4,7 +4,9 @@ const { getAllStations } = require("../../utils/snotel");
 // The `/api/stations` endpoint
 router.get("/", async (req, res) => {
   try {
-    const data = await getAllStations();
+    const state = req.query.state || "all";
+    
+    const data = await getAllStations(state);
 
     if (!data) {
       res.status(404).json({ message: "No data!" });
