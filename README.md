@@ -91,7 +91,7 @@ Request parameters:
 | Parameter | Description |
 | ---- | ---- |
 | ID (triplet) | Station id in the form of ###:STATE:SNTL. Example: 791:WA:SNTL. Find the triplet for a particular station through the /stations endpoint. |
-| Days (integer) | Number of days information to retrieve from today. (optional) |
+| Days (integer) | Number of days information to retrieve from today. (optional - defaults to 5 unless using start_date and end_date) |
 | Start date (YYYY-MM-DD) | Historical date to pull data from. Use in conjunction with end date. (optional) |
 | End date (YYYY-MM-DD) | Historical date to pull data from. Use in conjunction with start date (optional) |
 
@@ -108,6 +108,7 @@ The response includes basic station information in addition to an array of snow 
 
 Sample calls:
 
+- [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL)
 - [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10)
 - [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11)
 
