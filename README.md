@@ -2,7 +2,7 @@
 
 [![License Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-This project is a JavaScript port of the [PowderLin.es API](http://powderlin.es/api.html). The Ruby on Rails repo is located [here](https://github.com/bobbymarko/powderlines-api).
+This project is a Node.js port of the [PowderLin.es API](http://powderlin.es/api.html). The Ruby on Rails repo is located [here](https://github.com/bobbymarko/powderlines-api).
 
 ## Overview
 
