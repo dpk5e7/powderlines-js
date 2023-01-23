@@ -105,8 +105,8 @@ The response includes basic station information in addition to an array of snow 
 
 Sample calls:
 
-- [https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20](https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?days=20)
-- [https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?startdate=2013-01-15&enddate=2013-01-15](https://powderlines.kellysoftware.org/api/station/791:WA:SNTL?startdate=2013-01-15&enddate=2013-01-15)
+- [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?days=10)
+- [https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11](https://powderlines.kellysoftware.org/api/station/335:CO:SNTL?start_date=2023-01-09&end_date=2023-01-11)
 
 Sample response:
 
@@ -175,7 +175,7 @@ The response is an array of stations including their basic information in additi
 | Change In Snow Depth (in) | The change in the snow depth from the last measurement (typically the past 24 hours). |
 | Observed Air Temperature (degrees farenheit) | The observed air temperature, in degrees farenheit. |
 
-Sample call: [https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&lng=-121.3958&data=true&days=3&count=3](https://powderlines.kellysoftware.org/api/closest_stations?lat=47.3974&lng=-121.3958&data=true&days=3&count=3)
+Sample call: [https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3](https://powderlines.kellysoftware.org/api/closest_stations?lat=39.7392&lng=-104.9903&data=true&days=3&count=3)
 
 Sample response:
 
