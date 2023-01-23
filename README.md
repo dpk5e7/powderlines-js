@@ -6,7 +6,7 @@ This project is a Node.js port of the [PowderLin.es API](http://powderlin.es/api
 
 ## Overview
 
-Use our free API for accessing SNOTEL station data. Our API is useful for finding current snow levels in mountainous regions across the United States. Over 800 SNOTEL stations are available.
+Use our free API for accessing SNOTEL station data. Our API is useful for finding current snow levels in mountainous regions across the United States. 895 SNOTEL stations are available.
 
 ### [https://powderlines.kellysoftware.org/](https://powderlines.kellysoftware.org/)
 
@@ -37,11 +37,10 @@ Response parameters:
 The response comes as an array of objects. Here is a breakdown of a returned object.
 |Parameter | Descriptions |
 |----|----|
+|Name (string) | Name of the station |
+|Triplet (string) | Unique identifier for the station. Formatted as ::SNTL |
 |Elevation (integer) | Elevation of the station in feet |
 |Location (lat, lng object) | Latitude and longitude of the station |
-|Name (string) | Name of the station in ALL CAPS |
-|Triplet (string) | Unique identifier for the station. Formatted as ::SNTL |
-|Wind (boolean) | Indiciates whether or not the station is equiped with a wind sensor |
 
 Sample calls:
 
@@ -53,26 +52,22 @@ Sample Response:
 ```json
 [
   {
+    "name": "Berthoud Summit",
+    "triplet": "335:CO:SNTL",
     "elevation": 11300,
     "location": {
       "lat": 39.80392,
       "lng": -105.77789
-    },
-    "name": "BERTHOUD SUMMIT",
-    "timezone": -7,
-    "triplet": "335:CO:SNTL",
-    "wind": false
+    }
   },
   {
+    "name": "Loveland Basin",
+    "triplet": "602:CO:SNTL",
     "elevation": 11400,
     "location": {
       "lat": 39.67433,
       "lng": -105.90133
-    },
-    "name": "LOVELAND BASIN",
-    "timezone": -7,
-    "triplet": "602:CO:SNTL",
-    "wind": false
+    }
   },
   {
     ...
@@ -118,32 +113,30 @@ Sample response:
 {
   "station_information":
     {
-      "elevation": 11300,
+      "name": "Echo Lake",
+      "triplet": "936:CO:SNTL",
+      "elevation": 10600,
       "location": {
-        "lat": 39.80392,
-        "lng": -105.77789
-      },
-      "name": "BERTHOUD SUMMIT",
-      "timezone": -7,
-      "triplet": "335:CO:SNTL",
-      "wind": false
+        "lat": 39.65627,
+        "lng": -105.59345
+      }
     },
   "data": [
     {
-      "Date": "2023-01-21",
-      "Snow Water Equivalent (in)": "10.9",
-      "Change In Snow Water Equivalent (in)": "-0.1",
-      "Snow Depth (in)": "43",
-      "Change In Snow Depth (in)": "-1",
-      "Observed Air Temperature (degrees farenheit)": "6"
+      "Date": "2023-01-19",
+      "Snow Water Equivalent (in)": "3.2",
+      "Change In Snow Water Equivalent (in)": "0.1",
+      "Snow Depth (in)": "20",
+      "Change In Snow Depth (in)": "0",
+      "Observed Air Temperature (degrees farenheit)": "8"
     },
     {
-      "Date": "2023-01-22",
-      "Snow Water Equivalent (in)": "11.1",
-      "Change In Snow Water Equivalent (in)": "0.2",
-      "Snow Depth (in)": "44",
-      "Change In Snow Depth (in)": "1",
-      "Observed Air Temperature (degrees farenheit)": "4"
+      "Date": "2023-01-20",
+      "Snow Water Equivalent (in)": "3.3",
+      "Change In Snow Water Equivalent (in)": "0.1",
+      "Snow Depth (in)": "19",
+      "Change In Snow Depth (in)": "-1",
+      "Observed Air Temperature (degrees farenheit)": "12"
     },
     {
       ...
@@ -191,15 +184,13 @@ Sample response:
   {
     "station_information":
       {
+        "name": "Berthoud Summit",
+        "triplet": "335:CO:SNTL",
         "elevation": 11300,
         "location": {
           "lat": 39.80392,
           "lng": -105.77789
-        },
-        "name": "BERTHOUD SUMMIT",
-        "timezone": -7,
-        "triplet": "335:CO:SNTL",
-        "wind": false
+        }
       },
     "data": [
       {

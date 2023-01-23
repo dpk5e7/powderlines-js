@@ -21,7 +21,7 @@
       <div class="small-12 medium-8 medium-push-2 columns">
         <div class="post">
           <p>Use our free API for accessing SNOTEL station data. Our API is useful for finding current snow levels in
-            mountainous regions across the United States. Over 800 SNOTEL stations are available.</p>
+            mountainous regions across the United States. 895 SNOTEL stations are available.</p>
 
           <h2>Get all SNOTEL stations</h2>
 
@@ -52,24 +52,20 @@
               <th>Descriptions</th>
             </tr>
             <tr>
-              <td>Elevation (integer)</td>
-              <td>Elevation of the station in feet</td>
-            </tr>
-            <tr>
-              <td>Location (lat, lng object)</td>
-              <td>Latitude and longitude of the station</td>
-            </tr>
-            <tr>
               <td>Name (string)</td>
-              <td>Name of the station in ALL CAPS</td>
+              <td>Name of the station</td>
             </tr>
             <tr>
               <td>Triplet (string)</td>
               <td>Unique identifier for the station. Formatted as <ID number>:<state code>:SNTL</td>
             </tr>
             <tr>
-              <td>Wind (boolean)</td>
-              <td>Indiciates whether or not the station is equiped with a wind sensor</td>
+              <td>Elevation (integer)</td>
+              <td>Elevation of the station in feet</td>
+            </tr>
+            <tr>
+              <td>Location (lat, lng object)</td>
+              <td>Latitude and longitude of the station</td>
             </tr>
           </table>
 
@@ -89,26 +85,22 @@
           <pre>
 [
   {
+    &quot;name&quot;: &quot;Berthoud Summit&quot;,
+    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
     &quot;elevation&quot;: 11300,
     &quot;location&quot;: {
       &quot;lat&quot;: 39.80392,
       &quot;lng&quot;: -105.77789
-    },
-    &quot;name&quot;: &quot;BERTHOUD SUMMIT&quot;,
-    &quot;timezone&quot;: -7,
-    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
-    &quot;wind&quot;: false
+    }
   },
   {
+    &quot;name&quot;: &quot;Loveland Basin&quot;,
+    &quot;triplet&quot;: &quot;602:CO:SNTL&quot;,
     &quot;elevation&quot;: 11400,
     &quot;location&quot;: {
       &quot;lat&quot;: 39.67433,
       &quot;lng&quot;: -105.90133
-    },
-    &quot;name&quot;: &quot;LOVELAND BASIN&quot;,
-    &quot;timezone&quot;: -7,
-    &quot;triplet&quot;: &quot;602:CO:SNTL&quot;,
-    &quot;wind&quot;: false
+    }
   },
   {
   ...
@@ -204,15 +196,13 @@
           <pre>
 {
   &quot;station_information&quot;: {
+    &quot;name&quot;: &quot;Berthoud Summit&quot;,
+    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
     &quot;elevation&quot;: 11300,
     &quot;location&quot;: {
       &quot;lat&quot;: 39.80392,
       &quot;lng&quot;: -105.77789
-      },
-    &quot;name&quot;: &quot;BERTHOUD SUMMIT&quot;,
-    &quot;timezone&quot;: -7,
-    &quot;triplet&quot;: &quot;335:CO:SNTL&quot;,
-    &quot;wind&quot;: false
+    }
   },
   &quot;data&quot;: [
     {
@@ -328,15 +318,13 @@
 [
   {
     &quot;station_information&quot;: {
+      &quot;name&quot;: &quot;ECHO LAKE&quot;,
+      &quot;triplet&quot;: &quot;936:CO:SNTL&quot;,
       &quot;elevation&quot;: 10600,
-        &quot;location&quot;: {
+      &quot;location&quot;: {
         &quot;lat&quot;: 39.65627,
         &quot;lng&quot;: -105.59345
-        },
-      &quot;name&quot;: &quot;ECHO LAKE&quot;,
-      &quot;timezone&quot;: -7,
-      &quot;triplet&quot;: &quot;936:CO:SNTL&quot;,
-      &quot;wind&quot;: false
+      }
     },
     &quot;data&quot;: [
       {
